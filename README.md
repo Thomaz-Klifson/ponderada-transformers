@@ -20,3 +20,29 @@ O arquivo Hiperparametros_modificados_de_Ponderada_Transformers.ipynb possui os 
 
 - **warmup_steps = 5000**  
   *Aumento dos passos de warmup na estratégia de ajuste da taxa de aprendizagem para uma transição mais suave no início do treinamento.*
+
+# Pontos Positivos
+Representação Mais Rica:
+Aumentar a dimensionalidade dos embeddings (d_model) e das camadas feed-forward (dff) permitiu que o modelo capturasse relações mais complexas e nuances semânticas nos dados, levando a uma melhor qualidade das traduções ou previsões.
+
+Profundidade Adicional:
+Um maior número de camadas (num_layers) ajudou o modelo a aprender representações hierárquicas, melhorando a capacidade de entender contextos mais longos e variados.
+
+Regularização com Dropout:
+Aumentar a taxa de dropout reduziu o risco de overfitting e ajudou na generalização do modelo.
+
+Estratégia de Warmup Refinada:
+Ajustar os passos de warmup no scheduler de taxa de aprendizagem estabilizou o início do treinamento, permitindo uma convergência mais suave e eficaz.
+
+# Pontos Negativos
+Custo Computacional e de Memória:
+Aumentar d_model, dff e o número de camadas também aumentou significativamente o custo computacional e o uso de memória. Isso levou a tempos de treinamento mais longos e exigiu mais da GPU.
+
+Risco de Overfitting:
+Modelos muito complexos podem aprender ruídos específicos do conjunto de treinamento. Mesmo com dropout, é necessário um cuidado extra, principalmente se o dataset não for muito grande.
+
+Dificuldade na Otimização:
+Hiperparâmetros mais altos podem tornar a convergência do modelo mais difícil, exigindo ajustes finos na taxa de aprendizagem e outras configurações de otimização.
+
+Complexidade na Experimentação:
+Alterações nesses hiperparâmetros exigiu experimentação cuidadosa, pois pequenas mudanças tiveram impactos significativos e encontrar o equilíbrio ideal demanda bastante tempo e recursos.
